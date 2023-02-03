@@ -14,8 +14,8 @@ export class Age {
         this.marsAge = Math.floor(this.currentEarthAge / planetModifier[planet]);
       case ('jupiter'):
         this.jupiterAge = Math.floor(this.currentEarthAge / planetModifier[planet]);
-      // default:
-      //   return false;
+      default:
+        return false;
     }
   }
 }
