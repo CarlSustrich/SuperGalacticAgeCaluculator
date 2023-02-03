@@ -1,39 +1,44 @@
 export class Age {
   constructor(inputtedAge) {
     this.currentEarthAge = Number(inputtedAge);
+    this.planetModifier = {mercury: 0.24, venus: 0.62, mars: 1.88, jupiter: 11.86};
   }
 
   currentAgeOn(planet) {
-    const planetModifier = {mercury: 0.24, venus: 0.62, mars: 1.88, jupiter: 11.86};
-    let planetAge = Math.floor(this.currentEarthAge / planetModifier[planet]);
+    let planetAge = Math.floor(this.currentEarthAge / this.planetModifier[planet]);
+    let returnString = `You would be ${planetAge} years old on ${planet}`;
     switch (planet) {
       case ('mercury'):
         this.mercuryAge = planetAge;
-        break;
+        return returnString;
       case ('venus'):
         this.venusAge = planetAge;
-        break;
+        return returnString;
       case ('mars'):
         this.marsAge = planetAge;
-        break;
+        return returnString;
       case ('jupiter'):
         this.jupiterAge = planetAge;
-        break;
+        return returnString;
       default:
         return false;
     }
   }
 
   yearsPassed(age, planet) {
-    const planetModifier = {mercury: 0.24, venus: 0.62, mars: 1.88, jupiter: 11.86};
     const earthYearsPassed = Math.abs(this.currentEarthAge - age);
-    const planetYearsPassed =  (earthYearsPassed/ planetModifier[planet]).toFixed(2);
+    const planetYearsPassed =  (earthYearsPassed/ this.planetModifier[planet]).toFixed(2);
     const stringModifier = this.currentEarthAge > age ? 'have passed' : 'have yet to pass';
     return `In the ${earthYearsPassed} earth years that ${stringModifier}, ${planetYearsPassed} ${planet} years ${stringModifier}.`;
   }
 
   daysUntil(birthday) {
-    this.birthday = new Date(birthday);
+    let bdayObj = new Date(birthday);
+    let now = new Date();
+    let oneYear = (new Date('2023,01,01') - new Date('2022,01,01'));
+    bdayObj.setFullYear(now.getFullYear());
+    let mSBetween;
+    bdayObj > now ? mSBetween = (bdayObj - now) : mSBetween = oneYear - (Math.abs(bdayObj - now)) ;
+    return `${Math.ceil(mSBetween/86400000)} days until your birthday, on earth`
   }
-  
 }

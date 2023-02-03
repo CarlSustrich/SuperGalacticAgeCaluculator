@@ -84,20 +84,38 @@ describe('Age Object Functionality', () => {
       expect(returnText).toEqual('In the 5 earth years that have yet to pass, 0.42 jupiter years have yet to pass.')
     
     });
-
-
   });
 
   describe('daysUntil', () => {
 
-    beforeEach(() => {
-      newAge.daysUntil('1989, 08, 07')
-    })
+    // beforeEach(() => {
+    //   newAge.todayDate = 1;
+    //   jest.replaceProperty(newAge, 'todayDate', (new Date('2023,01,01')));
+    // });
 
-    test('is should create a date object associated with an inputted birthday and store it as an object property', () => {
-      expect(newAge.birthday).toEqual(new Date('1989, 08, 07'))
-    })
+    // afterEach(() => {
+    //   jest.restoreAllMocks();
+    // });
 
+    // test('it should identify the number of days until a birthday on specified planet', () => {
+    //   const spy = jest.spyOn(newAge, 'todayDate', 'set');
+    //   newAge.todayDate = new Date('2023, 01, 01');
+      
+    //   let testDays = newAge.daysUntil('1989, 08, 07', 'earth');
+    //   expect(testDays).toEqual('218 days until your birthday, on earth')
+    
+    //   testDays = newAge.daysUntil('1989, 08, 07', 'mercury');
+    //   expect(testDays).toEqual();
+
+    //   testDays = newAge.daysUntil('1989, 08, 07', 'venus');
+    //   expect(testDays).toEqual();
+
+    //   testDays = newAge.daysUntil('1989, 08, 07', 'mars');
+    //   expect(testDays).toEqual();
+
+    //   testDays = newAge.daysUntil('1989, 08, 07', 'jupiter');
+    //   expect(testDays).toEqual();
+    // })
   })
 
 });
