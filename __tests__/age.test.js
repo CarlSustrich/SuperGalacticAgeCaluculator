@@ -56,10 +56,20 @@ describe('Age Object Functionality', () => {
       newAge.currentEarthAge = 56;
     })
     
-
     test('it should receive an age less than the users current age and return how many years have passed on the specified planet since then', () => {
       let returnText = newAge.yearsPassed('43', 'mercury');
       expect(returnText).toEqual('In the 13 earth years that have passed since then, 54.17 mercury years have passed.')
+
+      returnText = newAge.yearsPassed('43', 'venus');
+      expect(returnText).toEqual('In the 13 earth years that have passed since then, 20.97 venus years have passed.')
+
+      returnText = newAge.yearsPassed('43', 'mars');
+      expect(returnText).toEqual('In the 13 earth years that have passed since then, 6.91 mars years have passed.')
+
+      returnText = newAge.yearsPassed('43', 'jupiter');
+      expect(returnText).toEqual('In the 13 earth years that have passed since then, 1.10 jupiter years have passed.')
+
+
     })
 
 
