@@ -43,5 +43,10 @@ describe('Age Object Functionality', () => {
       expect(newAge.jupiterAge).toEqual(2)
     });
 
+    test('it should return false if the inputted planet does not match one of the tested planets', () => {
+      const errorTest = newAge.currentAgeOn('fish');
+      expect(errorTest).toEqual(false)
+    });
+
   });
 });
