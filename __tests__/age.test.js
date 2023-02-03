@@ -58,30 +58,30 @@ describe('Age Object Functionality', () => {
     
     test('it should receive an age less than the users current age and return how many years have passed on the specified planet since then', () => {
       let returnText = newAge.yearsPassed('43', 'mercury');
-      expect(returnText).toEqual('In the 13 earth years that have passed since then, 54.17 mercury years have passed.')
+      expect(returnText).toEqual('In the 13 earth years that have passed, 54.17 mercury years have passed.')
 
       returnText = newAge.yearsPassed('43', 'venus');
-      expect(returnText).toEqual('In the 13 earth years that have passed since then, 20.97 venus years have passed.')
+      expect(returnText).toEqual('In the 13 earth years that have passed, 20.97 venus years have passed.')
 
       returnText = newAge.yearsPassed('43', 'mars');
-      expect(returnText).toEqual('In the 13 earth years that have passed since then, 6.91 mars years have passed.')
+      expect(returnText).toEqual('In the 13 earth years that have passed, 6.91 mars years have passed.')
 
       returnText = newAge.yearsPassed('43', 'jupiter');
-      expect(returnText).toEqual('In the 13 earth years that have passed since then, 1.10 jupiter years have passed.')
+      expect(returnText).toEqual('In the 13 earth years that have passed, 1.10 jupiter years have passed.')
     });
 
     test('it should receive an age greater than the users current age and return how many years have yet to pass on the specified planet until then', () => {
       let returnText = newAge.yearsPassed('61', 'mercury');
-      expect(returnText).toEqual('In the 5 earth years that have yet to pass, 54.17 mercury years have yet to pass.')
+      expect(returnText).toEqual('In the 5 earth years that have yet to pass, 20.83 mercury years have yet to pass.')
 
       returnText = newAge.yearsPassed('61', 'venus');
-      expect(returnText).toEqual('In the 5 earth years that have yet to pass, 20.97 venus years have yet to pass.')
+      expect(returnText).toEqual('In the 5 earth years that have yet to pass, 8.06 venus years have yet to pass.')
 
       returnText = newAge.yearsPassed('61', 'mars');
-      expect(returnText).toEqual('In the 5 earth years that have yet to pass, 6.91 mars years have yet to pass.')
+      expect(returnText).toEqual('In the 5 earth years that have yet to pass, 2.66 mars years have yet to pass.')
 
       returnText = newAge.yearsPassed('61', 'jupiter');
-      expect(returnText).toEqual('In the 5 earth years that have yet to pass, 1.10 jupiter years have yet to pass.')
+      expect(returnText).toEqual('In the 5 earth years that have yet to pass, 0.42 jupiter years have yet to pass.')
     
     });
 
