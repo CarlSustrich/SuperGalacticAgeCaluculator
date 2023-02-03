@@ -38,5 +38,10 @@ describe('Age Object Functionality', () => {
       expect(newAge.marsAge).toEqual(13)
     });
 
+    test('it should create a "jupiterAge" property on the Age object, and assign its value based on a 11.86:1 equivalence', () => {
+      newAge.currentAgeOn('jupiter');
+      expect(newAge.jupiterAge).toEqual(2)
+    });
+
   });
 });
