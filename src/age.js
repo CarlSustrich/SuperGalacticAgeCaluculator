@@ -31,5 +31,9 @@ export class Age {
     const stringModifier = this.currentEarthAge > age ? 'have passed' : 'have yet to pass';
     return `In the ${earthYearsPassed} earth years that ${stringModifier}, ${planetYearsPassed} ${planet} years ${stringModifier}.`;
   }
+
+  daysUntil() {
+    
+  }
   
 }
