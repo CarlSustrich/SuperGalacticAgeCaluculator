@@ -18,4 +18,11 @@ export class Age {
         return false;
     }
   }
+
+    yearsPassed(age, planet) {
+      // const planetModifier = {mercury: 0.24, venus: 0.62, mars: 1.88, jupiter: 11.86};
+      // let earthYearsPassed = Math.abs(this.currentEarthAge - age)
+      // let planetYearsPassed =  (earthYearsPassed/ planetModifier[planet]).toFixed(2)
+      // return `In the ${earthYearsPassed} earth years that have passed since then, ${planetYearsPassed} ${planet} years have passed.`
+    }
 }

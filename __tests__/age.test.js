@@ -47,6 +47,24 @@ describe('Age Object Functionality', () => {
       const errorTest = newAge.currentAgeOn('fish');
       expect(errorTest).toEqual(false)
     });
-
   });
+
+
+  describe('yearsPassed', () => {
+
+    beforeEach(() => {
+      newAge.currentEarthAge = 56;
+    })
+    
+
+    test('it should receive an age less than the users current age and return how many years have passed on the specified planet since then', () => {
+      let returnText = newAge.yearsPassed('43', 'mercury');
+      expect(returnText).toEqual('In the 13 earth years that have passed since then, 54.16 mercury years have passed.')
+    })
+
+
+  })
+
+
+
 });
