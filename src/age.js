@@ -4,6 +4,7 @@ export class Age {
   }
 
   currentAgeOn(planet) {
-    
+    const planetModifier = {mercury: 0.24};
+    this.mercuryAge = Math.floor(this.currentEarthAge / planetModifier[planet]);
   }
 }
