@@ -36,10 +36,10 @@ export class Age {
     let bdayObj = new Date(birthday);
     const now = new Date();
     const oneYearInMS = (new Date('2023,01,01') - new Date('2022,01,01'));
-    const oneDayInMS = 86400000;
+    const oneDayInMS = (new Date('2023,01,02') - new Date('2023,01,01'));
     bdayObj.setFullYear(now.getFullYear());
     let mSBetween;
     bdayObj > now ? mSBetween = (bdayObj - now) : mSBetween = oneYearInMS - (Math.abs(bdayObj - now)) ;
-    return `${(mSBetween/oneDayInMS).toFixed(2)} days until your birthday, on earth, or ${((mSBetween/this.planetModifier[planet])/oneDayInMS).toFixed(2)} days until your birthday on ${planet}.`
+    return `${(mSBetween/oneDayInMS).toFixed(2)} days until your birthday, on earth, or ${((mSBetween/this.planetModifier[planet])/oneDayInMS).toFixed(2)} days until your birthday on ${planet}.`;
   }
 }
