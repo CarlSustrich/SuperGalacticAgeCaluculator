@@ -17,4 +17,16 @@ describe('Age Object Functionality', () => {
     let stringAge = new Age('25');
     expect(stringAge.currentEarthAge).toEqual(25);
   })
+
+
+
+
+  describe('currentAgeOn', () => {
+
+    test('it should create a "mercuryAge" property on the Age object, and assign its value based on a .24:1 equivalence', () => {
+      newAge.currentAgeOn('mercury');
+      expect(newAge.mercuryAge).toEqual(104)
+    });
+
+  });
 });
