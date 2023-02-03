@@ -16,7 +16,7 @@ describe('Age Object Functionality', () => {
   test('it should complete the last tests functionality, whether a string or number is passed in', () => {
     let stringAge = new Age('25');
     expect(stringAge.currentEarthAge).toEqual(25);
-  })
+  });
 
 
 
@@ -86,7 +86,7 @@ describe('Age Object Functionality', () => {
     });
 
 
-  })
+  });
 
 
 
