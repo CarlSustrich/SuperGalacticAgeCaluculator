@@ -33,5 +33,10 @@ describe('Age Object Functionality', () => {
       expect(newAge.venusAge).toEqual(40)
     });
 
+    test('it should create a "marsAge" property on the Age object, and assign its value based on a 1.88:1 equivalence', () => {
+      newAge.currentAgeOn('mars');
+      expect(newAge.marsAge).toEqual(13)
+    });
+
   });
 });
