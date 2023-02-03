@@ -32,13 +32,14 @@ export class Age {
     return `In the ${earthYearsPassed} earth years that ${stringModifier}, ${planetYearsPassed} ${planet} years ${stringModifier}.`;
   }
 
-  daysUntil(birthday) {
+  daysUntil(birthday, planet) {
     let bdayObj = new Date(birthday);
-    let now = new Date();
-    let oneYear = (new Date('2023,01,01') - new Date('2022,01,01'));
+    const now = new Date();
+    const oneYearInMS = (new Date('2023,01,01') - new Date('2022,01,01'));
+    const oneDayInMS = 86400000;
     bdayObj.setFullYear(now.getFullYear());
     let mSBetween;
-    bdayObj > now ? mSBetween = (bdayObj - now) : mSBetween = oneYear - (Math.abs(bdayObj - now)) ;
-    return `${Math.ceil(mSBetween/86400000)} days until your birthday, on earth`
+    bdayObj > now ? mSBetween = (bdayObj - now) : mSBetween = oneYearInMS - (Math.abs(bdayObj - now)) ;
+    return `${(mSBetween/oneDayInMS).toFixed(2)} days until your birthday, on earth, or ${((mSBetween/this.planetModifier[planet])/oneDayInMS).toFixed(2)} days until your birthday on ${planet}.`
   }
 }

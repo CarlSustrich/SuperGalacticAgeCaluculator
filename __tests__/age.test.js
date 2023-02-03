@@ -86,7 +86,7 @@ describe('Age Object Functionality', () => {
     });
   });
 
-  describe('daysUntil', () => {
+  // describe('daysUntil', () => {
 
     // beforeEach(() => {
     //   newAge.todayDate = 1;
@@ -116,6 +116,6 @@ describe('Age Object Functionality', () => {
     //   testDays = newAge.daysUntil('1989, 08, 07', 'jupiter');
     //   expect(testDays).toEqual();
     // })
-  })
+  // })
 
 });
