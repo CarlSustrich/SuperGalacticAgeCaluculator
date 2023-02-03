@@ -5,15 +5,16 @@ export class Age {
 
   currentAgeOn(planet) {
     const planetModifier = {mercury: 0.24, venus: 0.62, mars: 1.88, jupiter: 11.86};
+    let planetAge = Math.floor(this.currentEarthAge / planetModifier[planet]);
     switch (planet) {
       case ('mercury'):
-        this.mercuryAge = Math.floor(this.currentEarthAge / planetModifier[planet]);
+        this.mercuryAge = planetAge;
       case ('venus'):
-        this.venusAge = Math.floor(this.currentEarthAge / planetModifier[planet]);
+        this.venusAge = planetAge;
       case ('mars'):
-        this.marsAge = Math.floor(this.currentEarthAge / planetModifier[planet]);
+        this.marsAge = planetAge;
       case ('jupiter'):
-        this.jupiterAge = Math.floor(this.currentEarthAge / planetModifier[planet]);
+        this.jupiterAge = planetAge;
       default:
         return false;
     }
