@@ -86,36 +86,38 @@ describe('Age Object Functionality', () => {
     });
   });
 
-  // describe('daysUntil', () => {
+  describe('daysUntil', () => {
 
-    // beforeEach(() => {
-    //   newAge.todayDate = 1;
-    //   jest.replaceProperty(newAge, 'todayDate', (new Date('2023,01,01')));
-    // });
+    beforeEach(() => {
+      // jest.spyOn(global.Date, 'now').mockReturnValue(1672560000000)
+      // Date.now = jest.fn(() => new Date('2023, 01, 01').valueOf())
+      // jest.spyOn(Date, 'now').mockImplementation(() => 1672560000000);
+      // I think these all failed, as I'm not using Date.now() in the method, but it would take a decent re-work of the code to use this instead, and that seems like a bandaid fix to not knowing how to test this properly.
 
-    // afterEach(() => {
-    //   jest.restoreAllMocks();
-    // });
+      // jest.useFakeTimers("modern");
+      // jest.setSystemTime(new Date("2023-01-01"));
+      // This fails, as support for these features is added in jest 26 or 27, and epicodus pinned our jest at 24 in the lessons
 
-    // test('it should identify the number of days until a birthday on specified planet', () => {
-    //   const spy = jest.spyOn(newAge, 'todayDate', 'set');
-    //   newAge.todayDate = new Date('2023, 01, 01');
-      
-    //   let testDays = newAge.daysUntil('1989, 08, 07', 'earth');
-    //   expect(testDays).toEqual('218 days until your birthday, on earth')
+
+      // jest.spyOn(Date.prototype, 'getDay').mockReturnValue(2);
+      // jest.spyOn(Date.prototype, 'toISOString').mockReturnValue('2023-01-01T00:00:00.000Z');
+      //
+    })
+
+    test('it should identify the number of days until a birthday on specified planet', () => {
     
-    //   testDays = newAge.daysUntil('1989, 08, 07', 'mercury');
-    //   expect(testDays).toEqual();
+      let testDays = newAge.daysUntil('1989, 08, 07', 'mercury');
+      expect(testDays).toEqual('217.96 days until your birthday, on earth, or 908.16 days until your birthday on mercury.');
 
-    //   testDays = newAge.daysUntil('1989, 08, 07', 'venus');
-    //   expect(testDays).toEqual();
+      testDays = newAge.daysUntil('1989, 08, 07', 'venus');
+      expect(testDays).toEqual('217.96 days until your birthday, on earth, or 351.55 days until your birthday on venus.');
 
-    //   testDays = newAge.daysUntil('1989, 08, 07', 'mars');
-    //   expect(testDays).toEqual();
+      testDays = newAge.daysUntil('1989, 08, 07', 'mars');
+      expect(testDays).toEqual('217.96 days until your birthday, on earth, or 115.94 days until your birthday on mars.');
 
-    //   testDays = newAge.daysUntil('1989, 08, 07', 'jupiter');
-    //   expect(testDays).toEqual();
-    // })
-  // })
+      testDays = newAge.daysUntil('1989, 08, 07', 'jupiter');
+      expect(testDays).toEqual('217.96 days until your birthday, on earth, or 18.38 days until your birthday on jupiter.');
+    })
+  })
 
 });
