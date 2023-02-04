@@ -32,8 +32,5 @@ export class Age {
     return `In the ${earthYearsPassed} earth years that ${stringModifier}, ${planetYearsPassed} ${planet} years ${stringModifier}.`;
   }
 
-  daysUntil(birthday) {
-    this.birthday = new Date(birthday);
-  }
   
 }

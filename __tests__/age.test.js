@@ -88,16 +88,4 @@ describe('Age Object Functionality', () => {
 
   });
 
-  describe('daysUntil', () => {
-
-    beforeEach(() => {
-      newAge.daysUntil('1989, 08, 07')
-    })
-
-    test('is should create a date object associated with an inputted birthday and store it as an object property', () => {
-      expect(newAge.birthday).toEqual(new Date('1989, 08, 07'))
-    })
-
-  })
-
 });
